@@ -1,0 +1,60 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    background-color: var(--bg-loading);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+
+}
+
+.loader_container {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.orbe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    --delay: calc(var(--index) * 0.1s);
+    animation: orbit7456 ease-in-out 1.5s var(--delay) infinite;
+    opacity: calc(1 - calc(0.2 * var(--index)));
+    border-radius: 100%;
+}
+
+.orbe::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: var(--loading);
+    box-shadow: 0px 0px 5px 2px var(--loading);
+    border-radius: 100%;
+}
+
+@keyframes orbit7456 {
+    0% {}
+
+    80%,
+    100% {
+        transform: rotate(360deg);
+    }
+}

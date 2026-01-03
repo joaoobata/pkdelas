@@ -1,0 +1,31 @@
+:root {
+  color-scheme: light dark;
+  /* Palette: neon green + pink code */
+  --color-text: #c8ff7a;
+  --color-text-muted: #e7ffe0;
+  --accent: white;
+  --accent-2: #d5ff66;
+  --gold: #0a0a0a;
+  --color-bg-0: #05080f;
+  --color-bg-1: #0d1622;
+  --code-pink: rgba(255, 79, 163, 0.8);
+  --code-pink-soft: rgba(255, 79, 163, 0.4);
+  --color-surface: rgba(8, 14, 6, 0.24);
+  --color-border: rgba(165, 255, 0, 0.16);
+  --shadow-elev: 0 24px 64px rgba(0, 0, 0, 0.65);
+  --radius-lg: 28px;
+  --radius-pill: 15px;
+  --btn-clip: polygon(12px 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 12px 100%, 0 50%);
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --transition-fast: .15s ease;
+  --loading: white;
+  --bg-loading: rgba(0, 0, 0, 0.5);
+  --bg-line-square: rgba(59, 48, 13, 0.35);
+  --bg-star: rgba(255, 255, 255, 0.25);
+  --bg-noise: rgba(255, 255, 255, 0.03);
+}

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>MÉTODO DO ANDRE</title>
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="./assets/global/style/colorsv14.css">
+    <link rel="stylesheet" href="./assets/global/style/globalv14.css">
+    <link rel="stylesheet" href="./assets/global/style/bg-matrixv14.css">
+    <link rel="stylesheet" href="./assets/global/style/start-loadingv14.css">
+    <link rel="stylesheet" href="./assets/application/style/game_Containerv14.css">
+    <link rel="stylesheet" href="./assets/application/style/game_Sliderv14.css">
+    <link rel="stylesheet" href="./assets/global/style/sidebarv14.css">
+    <link rel="stylesheet" href="./assets/application/style/game_Sliderv14.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <style>
+        /* força contraste do nome dos jogos no mobile */
+        .game_Name {
+            color: #f8fff1;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+            font-weight: 800;
+        }
+        .app_Header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            padding: 14px 18px 6px;
+            width: 100%;
+        }
+        .app_Header img {
+            height: 52px;
+            width: auto;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .app_Header img {
+                height: 44px;
+            }
+            body {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            .app_Main {
+                padding: 12px 10px 96px;
+                margin-left: 0;
+            }
+            .game_Container {
+                width: 100%;
+                padding: 0;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body data-page="home">
+    <canvas id="bg-matrix" aria-hidden="true"></canvas>
+    <section class="loader">
+        <div class="loader_container">
+            <div class="orbe" style="--index: 0"></div>
+            <div class="orbe" style="--index: 1"></div>
+            <div class="orbe" style="--index: 2"></div>
+            <div class="orbe" style="--index: 3"></div>
+            <div class="orbe" style="--index: 4"></div>
+        </div>
+    </section>
+    <header class="app_Header">
+        
+        <!--<img src="./assets/application/images/pkdelas.png" alt="GB"> -->
+    </header>
+    <div class="app_M">
+        <aside class="sidebar">
+            <nav>
+                <a href="#" data-link-key="home" class="sidebar_Button active"><i class="bi bi-house-door"></i>
+                    Início</a>
+                <a href="control-banca.html" data-link-key="bank" class="sidebar_Button"><i class="bi bi-wallet2"></i>
+                    Controle de Banca</a>
+                <a href="https://wlsuperbet.adsrv.eacdn.com/C.ashx?btag=a_13880b_431c_&affid=662&siteid=13880&adid=431&c=AndreRosa" target="_blank" class="sidebar_Button"><i class="bi bi-coin"></i></i> Cassino</a>
+            </nav>
+        </aside>
+        <main class="app_Main">
+            <section class="game_Container">
+                <div class="game_Header">
+                    <div>
+                        <h1 class="game_HeaderTitle">JOGOS MAIS LUCRATIVOS DO MOMENTO</h1>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev" aria-label="Anterior">
+                            <i class="bi bi-arrow-left-short"></i>
+                        </button>
+                        <button class="slider-btn next" aria-label="Próximo">
+                            <i class="bi bi-arrow-right-short"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="games_Slider-Viewport">
+                    <div id="gamesTrack" class="slider_Track">
+                        <div class="game_Card">
+                            <span class="game_Name">
+                                Bloody Dawn
+                            </span>
+                            <a href="bloody-dawn.html" data-link-key="game-bloody-dawn"
+                                class="game_CardGlitch glitch_Card_Bloody-Dawn">
+                                <img src="./assets/application/images/games/1-bloody-dawn.jpg" alt="Bloody Dawn" />
+                            </a>
+                            <a href="bloody-dawn.html" data-link-key="game-bloody-dawn" class="game_Button pill">
+                                ROUBAR
+                            </a>
+                        </div>
+                        <div class="game_Card">
+                            <span class="game_Name">
+                                Wild Bandit
+                            </span>
+                            <div class="game_CardGlitch glitch_Card-Wild-Bandito">
+                                <a href="wild-bandito.html" data-link-key="game-wild-bandito">
+                                    <img src="./assets/application/images/games/1-wild-bandito.png"
+                                        alt="Wild Bandito" />
+                                </a>
+                            </div>
+                            <a href="wild-bandito.html" data-link-key="game-wild-bandito" class="game_Button pill">
+                                ROUBAR
+                            </a>
+                        </div>
+                        <div class="game_Card">
+                            <span class="game_Name">
+                                Dynamite Trio
+                            </span>
+                            <div class="game_CardGlitch glitch_Card-Dynamite-Trio">
+                                <a href="dynamite-trio.html" data-link-key="game-dynamite-trio">
+                                    <img src="./assets/application/images/games/1-dynamite-trio.png"
+                                        alt="Dynamite Trio" />
+                                </a>
+                            </div>
+                            <a href="dynamite-trio.html" data-link-key="game-dynamite-trio" class="game_Button pill">
+                                ROUBAR
+                            </a>
+                        </div>
+                        <div class="game_Card">
+                            <span class="game_Name">
+                                Spell Master
+                            </span>
+                            <div class="game_CardGlitch glitch_Card-Spell-Master">
+                                <a href="spell-master.html" data-link-key="game-spell-master">
+                                    <img src="./assets/application/images/games/1-spell-master.png"
+                                        alt="Spell Master" />
+                                </a>
+                            </div>
+                            <a href="spell-master.html" data-link-key="game-spell-master" class="game_Button pill">
+                                ROUBAR
+                            </a>
+                        </div>
+                        <div class="game_Card">
+                            <span class="game_Name">
+                                Rage of Perun
+                            </span>
+                            <div class="game_CardGlitch glitch_Card-Rage-of-Perun">
+                                <a href="rage-of-perun.html" data-link-key="game-rage-of-perun">
+                                    <img src="./assets/application/images/games/1-rage-of-perun.png"
+                                        alt="Rage of Perun" />
+                                </a>
+                            </div>
+                            <a href="rage-of-perun.html" data-link-key="game-rage-of-perun" class="game_Button pill">
+                                ROUBAR
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="howto">
+                <div class="howto__card">
+                    <div class="howto__head">
+                        <h2 class="howto__title">Como usar o aplicativo</h2>
+                        <p class="howto__tag">Passo a passo rápido</p>
+                    </div>
+                    <div class="howto__grid">
+                        <div class="howto__item">
+                            <i class="bi bi-controller"></i>
+                            <div>
+                                <h3>1. Escolha</h3>
+                                <p>Selecione um jogo em “Jogos Proibidos” e clique na imagem ou botão.</p>
+                            </div>
+                        </div>
+                        <div class="howto__item">
+                            <i class="bi bi-play-fill"></i>
+                            <div>
+                                <h3>2. Invadir</h3>
+                                <p>Na página do jogo, clique em <strong>INVADIR</strong> para iniciar a busca.</p>
+                            </div>
+                        </div>
+                        <div class="howto__item">
+                            <i class="bi bi-broadcast"></i>
+                            <div>
+                                <h3>3. Aguardar</h3>
+                                <p>Deixe o radar encontrar falhas e acompanhe a barra de progresso.</p>
+                            </div>
+                        </div>
+                        <div class="howto__item">
+                            <i class="bi bi-terminal"></i>
+                            <div>
+                                <h3>4. Gerar</h3>
+                                <p>Ao ver “FALHAS ENCONTRADAS”, rode o terminal para obter o resultado.</p>
+                            </div>
+                        </div>
+                        <div class="howto__item">
+                            <i class="bi bi-link-45deg"></i>
+                            <div>
+                                <h3>5. Seguir</h3>
+                                <p>Use “acompanhar falha” para ir ao link configurado na plataforma.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 
+            <section class="howto bank-info">
+                <div class="howto__card">
+                    <div class="howto__head">
+                        <h2 class="howto__title">Controle de banca</h2>
+                        <p class="howto__tag">Use antes de jogar</p>
+                    </div>
+                    <div class="howto__grid">
+                        <div class="howto__item">
+                            <i class="bi bi-wallet2"></i>
+                            <div>
+                                <h3>Defina seu saldo</h3>
+                                <p>Informe quanto você pode investir no <strong>Controle de Banca</strong> para calcular
+                                    limites.</p>
+                            </div>
+                        </div>
+                        <div class="howto__item">
+                            <i class="bi bi-graph-up"></i>
+                            <div>
+                                <h3>Respeite a meta</h3>
+                                <p>O painel mostra quanto pode ganhar e perder no dia. Pare quando bater a meta.</p>
+                            </div>
+                        </div>
+                        <div class="howto__item">
+                            <i class="bi bi-shield-exclamation"></i>
+                            <div>
+                                <h3>Stop claro</h3>
+                                <p>Se atingir o limite de perda, encerre as rodadas e volte no próximo dia.</p>
+                            </div>
+                        </div>
+                        <div class="howto__item">
+                            <i class="bi bi-controller"></i>
+                            <div>
+                                <h3>Aplique no jogo</h3>
+                                <p>Use o valor “pode jogar por rodada” ao seguir as entradas dos jogos proibidos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            -->
+        </main>
+    </div>
+    <nav class="bottom-menu" aria-label="Menu r?pido">
+        <a href="#" data-link-key="home" aria-label="Início" class="active">
+            <i class="bi bi-house-door"></i>
+            <span class="sr-only">Início</span>
+        </a>
+        <a href="control-banca.html" data-link-key="bank" aria-label="Controle de Banca">
+            <i class="bi bi-wallet2"></i>
+            <span class="sr-only">Banca</span>
+        </a>
+        <a href="https://wlsuperbet.adsrv.eacdn.com/C.ashx?btag=a_13880b_431c_&affid=662&siteid=13880&adid=431&c=AndreRosa" data-link-key="platform" aria-label="Jogos">
+            <i class="bi bi-coin"></i>
+            <span class="sr-only">Cassino</span>
+        </a>
+    </nav>
+    <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "F12") {
+                event.preventDefault();
+                window.close();
+            }
+
+            if (event.ctrlKey && event.shiftKey && event.key === "C") {
+                event.preventDefault();
+                window.close();
+            }
+
+            if (event.ctrlKey && event.key === "U") {
+                event.preventDefault();
+                window.close();
+            }
+        });
+    </script>
+</body>
+<script src="./assets/global/javascript/links-1v14.js?v=14"></script>
+<script src="./assets/global/javascript/bg-matrixv14.js"></script>
+<script src="./assets/global/javascript/start-loadingv14.js"></script>
+<script src="./assets/application/javascript/game_Sliderv14.js"></script>
+<script src="./assets/application/javascript/glitch_randomv14.js"></script>
+<script src="./assets/global/javascript/trackv14.js?v=14"></script>
+
+</html>
+
+
+

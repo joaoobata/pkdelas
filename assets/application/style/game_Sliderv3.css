@@ -1,0 +1,72 @@
+/* FIX / PASSAR CSS PARA O GAME_CONTAINER */
+
+.slider-controls {
+    pointer-events: none;
+    margin-right: 1rem;
+}
+
+.slider-controls .slider-btn {
+    pointer-events: auto;
+}
+
+.slider-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.slider-dots {
+    display: none;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 0;
+}
+
+.slider-btn i {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.swipe-hint {
+    display: none !important;
+}
+
+.slider-dots {
+    display: none !important;
+}
+
+.swipe-hint {
+    display: none;
+}
+
+.swipe-hint .bi {
+    font-size: 18px;
+    line-height: 1;
+}
+
+@keyframes hint-left {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: .7
+    }
+
+    50% {
+        transform: translateX(-6px);
+        opacity: 1
+    }
+}
+
+@keyframes hint-right {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: .7
+    }
+
+    50% {
+        transform: translateX(6px);
+        opacity: 1
+    }
+}

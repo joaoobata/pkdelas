@@ -1,0 +1,494 @@
+.game_Container {
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.game_Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.game_HeaderTitle {
+    letter-spacing: .2rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* FIX */
+
+.slider-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+
+.games_Slider-Viewport {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider_Track {
+    display: flex;
+    gap: 15px;
+    padding-top: 1rem;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto;
+    scrollbar-width: none;
+
+
+}
+
+.slider_Track.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+/* hide WebKit scrollbar for track */
+.slider_Track::-webkit-scrollbar {
+    display: none;
+}
+
+.game_Card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 999;
+    width: 240px;
+    flex: 0 0 246px;
+    min-width: 200px;
+    padding: 1rem;
+    border-radius: .3rem;
+    -webkit-backdrop-filter: blur(6px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transition: transform .22s ease, box-shadow .22s ease, border-color .2s ease;
+
+
+
+    border: 1px solid rgba(165, 255, 0, 0.16);
+
+    padding: 1rem;
+    border-radius: .3rem;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+}
+
+.game_Card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    opacity: .65;
+    mix-blend-mode: screen;
+}
+
+/*
+.game_Card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+    z-index: 1;
+}
+*/
+
+.game_Name {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1.3rem;
+    text-align: center;
+
+}
+
+.game_CardGlitch {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    min-height: 240px;
+    --glitch-base: none;
+    --glitch-1: var(--glitch-base);
+    --glitch-2: var(--glitch-base);
+    --glitch-3: var(--glitch-base);
+    --glitch-delay: 0s;
+    --glitch-duration: 3.5s;
+    --glitch-shift: 1.5px;
+}
+
+.game_CardGlitch a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.game_CardGlitch a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game_CardGlitch::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--glitch-base) center/cover no-repeat;
+    animation: glitch-flash var(--glitch-duration) infinite steps(1);
+    animation-delay: var(--glitch-delay);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* extra burst layer only runs on intense glitches */
+.game_CardGlitch::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--glitch-1) center/cover no-repeat;
+    mix-blend-mode: screen;
+    opacity: 0;
+    animation: glitch-burst var(--glitch-duration) infinite steps(1);
+    animation-delay: calc(var(--glitch-delay) + .05s);
+    animation-play-state: paused;
+    z-index: 3;
+    pointer-events: none;
+    pointer-events: none;
+}
+
+@keyframes glitch-flash {
+
+    0%,
+    100% {
+        background: var(--glitch-base) center/cover no-repeat;
+        opacity: 1;
+    }
+
+    92.5% {
+        background: var(--glitch-1) center/cover no-repeat;
+        opacity: 1;
+    }
+
+    95% {
+        background: var(--glitch-2) center/cover no-repeat;
+        opacity: 0;
+    }
+
+    97.5% {
+        background: var(--glitch-3) center/cover no-repeat;
+        opacity: 1;
+    }
+}
+
+@keyframes glitch-burst {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    90% {
+        opacity: .35;
+        transform: translateX(calc(var(--glitch-shift) * -1));
+    }
+
+    93% {
+        opacity: .75;
+        transform: translateX(calc(var(--glitch-shift) * 1.4));
+    }
+
+    96% {
+        opacity: .15;
+        transform: translateX(calc(var(--glitch-shift) * -.6));
+    }
+}
+
+/* intensifies burst layer for selected cards */
+.glitch-intense::before {
+    animation-play-state: running;
+}
+
+/* default intense tuning; JS overwrites per cycle */
+.glitch-intense {
+    --glitch-duration: .75s;
+    --glitch-shift: 2px;
+}
+
+
+.card-intense {
+    position: relative;
+    border: 1px solid rgba(165, 255, 0, 0.75);
+
+}
+
+@keyframes card-float {
+    0% {
+        transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(-2px);
+    }
+}
+
+/* BLOODY DAWN */
+.glitch_Card_Bloody-Dawn {
+    --glitch-base: url('../images/games/1-bloody-dawn.jpg');
+    --glitch-1: url('../images/games/2-bloody-dawn-glitch.png');
+    border-radius: .3rem;
+    border: 1px solid rgba(165, 255, 0, 0.16);
+    object-fit: cover;
+}
+
+.glitch_Card-Wild-Bandito {
+    --glitch-base: url('../images/games/1-wild-bandito.png');
+    --glitch-1: url('../images/games/2-wild-bandito.png');
+    border-radius: .3rem;
+    border: 1px solid rgba(165, 255, 0, 0.16);
+    object-fit: cover;
+}
+
+.glitch_Card-Dynamite-Trio {
+    --glitch-base: url('../images/games/1-dynamite-trio.png');
+    --glitch-1: url('../images/games/2-dynamite-trio.png');
+    border-radius: .3rem;
+    border: 1px solid rgba(165, 255, 0, 0.16);
+    object-fit: cover;
+}
+
+.glitch_Card-Spell-Master {
+    --glitch-base: url('../images/games/1-spell-master.png');
+    --glitch-1: url('../images/games/2-spell-master.png');
+    border-radius: .3rem;
+    border: 1px solid rgba(165, 255, 0, 0.16);
+    object-fit: cover;
+}
+
+.glitch_Card-Rage-of-Perun {
+    --glitch-base: url('../images/games/1-rage-of-perun.png');
+    --glitch-1: url('../images/games/2-rage-of-perun.png');
+    border-radius: .3rem;
+    border: 1px solid rgba(165, 255, 0, 0.16);
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.game_Button {
+    text-decoration: none;
+    appearance: none;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(141, 220, 57, 0.75);
+    background: linear-gradient(180deg, #0c1b07, #0b1f05);
+    color: #c6ff66;
+    font-weight: 700;
+    letter-spacing: .4px;
+    height: 46px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform .08s ease, filter var(--transition-fast), opacity var(--transition-fast), box-shadow var(--transition-fast), background .12s ease, border-color .12s ease;
+    box-shadow:
+        0 0 0 1px rgba(141, 220, 57, 0.35) inset,
+        0 10px 22px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(141, 220, 57, 0.22);
+    animation: bump-in .5s ease .35s both;
+    border-radius: .3rem;
+}
+
+.game_Button.pill {
+    width: auto;
+    min-width: 100%;
+    justify-content: center;
+}
+
+.game_Button:hover {
+    filter: brightness(1.05);
+    background: linear-gradient(180deg, #10270a, #0f2e07);
+    border-color: rgba(152, 232, 76, 0.9);
+    box-shadow: 0 0 0 1px rgba(152, 232, 76, 0.45) inset, 0 12px 26px rgba(0, 0, 0, 0.58), 0 0 24px rgba(152, 232, 76, 0.26);
+}
+
+.game_Button:active {
+    transform: translateY(1px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .game_Button::before {
+        content: "";
+        position: absolute;
+        -webkit-clip-path: var(--btn-clip);
+        clip-path: var(--btn-clip);
+        top: -1px;
+        bottom: -1px;
+        left: -40%;
+        right: -40%;
+        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+        transform: translateX(-100%);
+        transition: transform .6s ease;
+        pointer-events: none;
+    }
+
+    .game_Button:hover::before {
+        transform: translateX(100%);
+    }
+}
+
+.game_Status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .92rem;
+    color: rgba(255, 255, 255, 0.82);
+    letter-spacing: .2px;
+    margin: 0 auto;
+}
+
+.game_Status .status-label {
+    font-weight: 700;
+}
+
+.game_Status .status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #666;
+    box-shadow: 0 0 0 transparent;
+    animation: dot-pulse 1s ease-in-out infinite;
+}
+
+.game_Status .status-text {
+    font-weight: 600;
+    opacity: .92;
+}
+
+.game_Status .status-dot.status-found {
+    background: #7bff7b;
+    box-shadow: 0 0 8px #7bff7b;
+}
+
+.game_Status.status-flash {
+    animation: status-pop .55s ease;
+}
+
+.game_Status.status-flash .status-dot {
+    animation: status-dot-flare .9s ease;
+}
+
+@keyframes dot-pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: .7;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: .7;
+    }
+}
+
+@keyframes status-pop {
+    0% {
+        transform: translateY(0) scale(1);
+        filter: brightness(1);
+    }
+
+    30% {
+        transform: translateY(-4px) scale(1.03);
+        filter: brightness(1.12);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        filter: brightness(1);
+    }
+}
+
+@keyframes status-dot-flare {
+    0% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 transparent;
+    }
+
+    40% {
+        transform: scale(1.25);
+        box-shadow: 0 0 12px rgba(141, 220, 57, 0.75);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 8px rgba(123, 255, 123, 0.6);
+    }
+}
+
+@media (max-width: 1280px) {
+    .game_Card {
+        height: 472px;
+    }
+
+    .slider_Track {
+        gap: 12px;
+        padding: 10px 14px 10px 0;
+    }
+
+    .game_HeaderTitle {
+        font-size: 1.35rem;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .game_Card {
+        height: auto;
+    }
+}

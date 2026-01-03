@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Controle de Banca</title>
+  <link rel="stylesheet" href="./assets/global/style/colorsv14.css">
+  <link rel="stylesheet" href="./assets/global/style/globalv14.css">
+  <link rel="stylesheet" href="./assets/global/style/bg-matrixv14.css">
+  <link rel="stylesheet" href="./assets/global/style/start-loadingv14.css">
+  <link rel="stylesheet" href="./assets/global/style/sidebarv14.css">
+  <link rel="stylesheet" href="./assets/application/style/page-game_Layoutv14.css">
+  <link rel="stylesheet" href="./assets/application/style/bloody-dawnv14.css">
+  <link rel="stylesheet" href="./assets/application/style/control-bancav14.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+
+<body class="bank-body" data-page="bank">
+  <canvas id="bg-matrix" aria-hidden="true"></canvas>
+  <div class="app_M bank-layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="#" data-link-key="home" class="sidebar_Button"><i class="bi bi-house-door"></i> Início</a>
+        <a href="#" data-link-key="bank" class="sidebar_Button active"><i class="bi bi-wallet2"></i>
+          Controle de Banca</a>
+        <a href="https://wlsuperbet.adsrv.eacdn.com/C.ashx?btag=a_13880b_431c_&affid=662&siteid=13880&adid=431&c=AndreRosa" data-link-key="platform" class="sidebar_Button"><i class="bi bi-coin"></i>
+          Cassino</a>
+      </nav>
+    </aside>
+    <main class="app_Main">
+      <div class="bank-wrapper">
+        <header class="bank-header">
+          <h1 class="bank-title">CONTROLE DE BANCA</h1>
+          <span class="bank-subtitle">Calcule meta, stop e tamanho de
+            entrada</span>
+        </header>
+        <section class="bank-panel">
+          <div class="bank-form">
+            <div class="bank-field">
+              <label class="bank-label" for="investimento">Quanto você tem
+                para começar (R$)</label>
+              <input id="investimento" class="bank-input" type="number" inputmode="decimal" placeholder="Ex: 500,00" />
+            </div>
+          </div>
+          <div class="bank-actions">
+            <button class="bank-btn primary" type="button" id="btn-calcular">Calcular</button>
+            <button class="bank-btn secondary" type="button" data-link-key="home">Voltar</button>
+          </div>
+        </section>
+        <section class="bank-grid">
+          <div class="bank-card">
+            <div class="bank-card-header"><i class="bi bi-controller"></i>
+              Pode jogar (por rodada)</div>
+            <div class="bank-card-value" id="valor-jogar">R$ 0,00</div>
+          </div>
+          <div class="bank-card">
+            <div class="bank-card-header"><i class="bi bi-graph-up"></i> Pode
+              ganhar (no dia)</div>
+            <div class="bank-card-value" id="valor-ganhar">R$ 0,00</div>
+          </div>
+          <div class="bank-card">
+            <div class="bank-card-header"><i class="bi bi-shield-exclamation"></i> Pode perder (no
+              dia)</div>
+            <div class="bank-card-value" id="valor-perder">R$ 0,00</div>
+          </div>
+          <div class="bank-card">
+            <div class="bank-card-header"><i class="bi bi-bullseye"></i> Meta
+              diária</div>
+            <div class="bank-card-value" id="valor-meta">R$ 0,00</div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <nav class="bottom-menu" aria-label="Menu rápido">
+    <a href="index.html" data-link-key="home" aria-label="Início">
+      <i class="bi bi-house-door"></i>
+      <span class="sr-only">Início</span>
+    </a>
+    <a href="#" data-link-key="bank" aria-label="Controle de Banca" class="active">
+      <i class="bi bi-wallet2"></i>
+      <span class="sr-only">Banca</span>
+    </a>
+    <a href="#" data-link-key="platform" aria-label="Jogos">
+      <i class="bi bi-coin"></i>
+      <span class="sr-only">Cassino</span>
+    </a>
+  </nav>
+  <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+  <script>
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "F12") {
+        event.preventDefault();
+        window.close();
+      }
+
+      if (event.ctrlKey && event.shiftKey && event.key === "C") {
+        event.preventDefault();
+        window.close();
+      }
+
+      if (event.ctrlKey && event.key === "U") {
+        event.preventDefault();
+        window.close();
+      }
+    });
+  </script>
+  <script src="./assets/global/javascript/links-1v14.js?v=14"></script>
+  <script src="./assets/global/javascript/bg-matrixv14.js"></script>
+  <script src="./assets/global/javascript/start-loadingv14.js"></script>
+  <script src="./assets/global/javascript/controle-de-bancav14.js"></script>
+  <script src="./assets/application/javascript/glitch_randomv14.js"></script>
+  <script src="./assets/global/javascript/trackv14.js?v=14"></script>
+</body>
+
+</html>
+
+
+
