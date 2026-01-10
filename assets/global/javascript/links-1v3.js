@@ -2,7 +2,7 @@
   const APP_LINKS = {
     home: 'index.html',
     bank: 'control-banca.html',
-    platform: 'https://wlsuperbet.adsrv.eacdn.com/C.ashx?btag=a_13880b_431c_&affid=662&siteid=13880&adid=431&c=AndreRosa',
+    platform: 'https://ads.betfair.bet.br/redirect.aspx?pid=6901750&bid=11330',
     'game-bloody-dawn': 'bloody-dawn.html',
     'game-wild-bandito': 'wild-bandito.html',
     'game-dynamite-trio': 'dynamite-trio.html',
@@ -71,3 +71,4 @@
     });
   }
 })();
+
