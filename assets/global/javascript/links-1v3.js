@@ -2,7 +2,7 @@
   const APP_LINKS = {
     home: 'index.html',
     bank: 'control-banca.html',
-    platform: 'https://ads.betfair.bet.br/redirect.aspx?pid=6901750&bid=11330',
+    platform: 'https://wlsuperbet.adsrv.eacdn.com/C.ashx?btag=a_12144b_431c_&affid=760&siteid=12144&adid=431&c=',
     'game-bloody-dawn': 'bloody-dawn.html',
     'game-wild-bandito': 'wild-bandito.html',
     'game-dynamite-trio': 'dynamite-trio.html',
@@ -71,4 +71,5 @@
     });
   }
 })();
+
 
