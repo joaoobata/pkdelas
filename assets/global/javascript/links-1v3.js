@@ -2,7 +2,7 @@
   const APP_LINKS = {
     home: 'index.html',
     bank: 'control-banca.html',
-    platform: 'https://wlsuperbet.adsrv.eacdn.com/C.ashx?btag=a_12144b_431c_&affid=760&siteid=12144&adid=431&c=',
+    platform: 'https://mediaserver.entainpartners.com/renderBanner.do?zoneId=2191322',
     'game-bloody-dawn': 'bloody-dawn.html',
     'game-wild-bandito': 'wild-bandito.html',
     'game-dynamite-trio': 'dynamite-trio.html',
