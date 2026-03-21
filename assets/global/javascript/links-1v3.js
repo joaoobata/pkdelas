@@ -2,7 +2,7 @@
   const APP_LINKS = {
     home: 'index.html',
     bank: 'control-banca.html',
-    platform: 'https://mediaserver.entainpartners.com/renderBanner.do?zoneId=2191322',
+    platform: 'https://go.aff.jogograndepartners.com/iyd8ah73',
     'game-bloody-dawn': 'bloody-dawn.html',
     'game-wild-bandito': 'wild-bandito.html',
     'game-dynamite-trio': 'dynamite-trio.html',
